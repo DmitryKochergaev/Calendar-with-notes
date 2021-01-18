@@ -1,0 +1,20 @@
+<form class="card" [formGroup]="form" >
+
+  <h1 mat-dialog-title>Change current month</h1>
+
+  <mat-form-field class="mat-form form-color">
+    <mat-label>Choose month</mat-label>
+    <mat-select formControlName="currentMonth" [(value)]="matSelectValue">
+      <mat-option value="january">january</mat-option>
+      <mat-option value="february">february</mat-option>
+      <mat-option value="march">march</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <div class="form-footer">
+    <button mat-raised-button color="primary" class="form-btn" [disabled]="form.invalid" (click)="onSaveClick()">Save
+    </button>
+    <button mat-raised-button color="warn" class="form-btn" (click)="onDiscardClick()">Discard</button>
+  </div>
+</form>
+

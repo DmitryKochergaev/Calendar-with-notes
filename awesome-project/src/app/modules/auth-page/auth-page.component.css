@@ -1,0 +1,36 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card h1, p {
+  text-align: center;
+}
+
+.mat-form {
+  margin-top: 25px;
+}
+
+.form-input {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.material-icons {
+  width: 30px;
+  height: 30px;
+}
+
+.form-btn {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.validation p {
+  color: red;
+}

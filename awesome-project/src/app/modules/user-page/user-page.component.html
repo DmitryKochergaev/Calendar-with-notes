@@ -1,0 +1,23 @@
+<div>
+  <form [formGroup]="form" class="form-container">
+    <h1>Change user data</h1>
+    <div class="group-container">
+      <mat-form-field class="mat-form-field">
+        <mat-label>User name</mat-label>
+        <input matInput placeholder="user name" formControlName="userName" [value]="user.userName">
+      </mat-form-field>
+
+      <mat-form-field class="mat-form-field">
+        <mat-label>Password</mat-label>
+        <input matInput placeholder="password" formControlName="password">
+      </mat-form-field>
+    </div>
+
+    <div>
+      <button mat-raised-button color="primary" type="submit" class="form-btn" (click)="onSubmit()" [disabled]="form.invalid">
+        Submit
+      </button>
+      <button mat-raised-button color="warn" (click)="onCancel()" type="button">Cancel</button>
+    </div>
+  </form>
+</div>

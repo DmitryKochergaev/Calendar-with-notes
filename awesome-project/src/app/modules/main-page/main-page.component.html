@@ -1,0 +1,70 @@
+<div class="main-container">
+  <div *ngIf="!month; else table" class="table-main">
+    <h1>Loading...</h1>
+  </div>
+
+  <ng-template #table>
+    <div class="table-main">
+      <h1 class="month-name">{{month.name}}</h1>
+      <div>
+        <div class="table-container">
+          <table class="calendar">
+            <tr>
+              <td *ngFor="let day of month.days" (click)="onDayClicked(day)"
+                  [style.background-color]="day.day %2===0 ? 'rgba(247,247,247,0.96)' : 'white'">
+                <div *ngIf="day.plans && getIcon(day) !== ''; else number" class="calendar-icon-container">
+                  <mat-icon svgIcon="{{getIcon(day)}}" aria-hidden="false" class="calendar-icon"></mat-icon>
+                </div>
+                <ng-template #number>
+                  <div class="table-number">
+                    <span>{{day.day}}</span>
+                  </div>
+                </ng-template>
+              </td>
+            </tr>
+          </table>
+        </div>
+
+        <hr *ngIf="showDay">
+        <div *ngIf="showDay" class="card">
+          <h1>Detailed plan</h1>
+          <div class="card-body">
+            <div class="card-day">
+              <h1>{{day.day}}</h1>
+            </div>
+            <div class="card-body-plans">
+              <div *ngIf="day.plans; else noPlans">
+                <div *ngFor="let plan of day.plans" class="card-text-container">
+                  <mat-icon svgIcon="{{plan.icon}}" aria-hidden="false" class="detailed-icon"></mat-icon>
+                  <div class="card-text">
+                    <h4>{{plan.header}}</h4>
+                    <p>{{plan.text}}</p>
+                  </div>
+                  <br>
+                </div>
+              </div>
+              <ng-template #noPlans><h1>No plans for the day yet...</h1></ng-template>
+            </div>
+          </div>
+
+          <div class="card-footer">
+            <button mat-raised-button color="" (click)="onClearClicked(day)" [disabled]="day.plans === null">
+              Clear all day
+            </button>
+            <button mat-raised-button color="" (click)="onEditClicked(day)">
+              Edit
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+
+  <div class="nav-container">
+    <mat-icon class="icon" svgIcon="user" aria-hidden="false" aria-label="user" (click)="onUserClicked()"></mat-icon>
+    <mat-icon class="icon" svgIcon="calendar" aria-hidden="false" aria-label="calendar"
+              (click)="onChangeMonthClicked()"></mat-icon>
+    <mat-icon class="icon" svgIcon="logout" aria-hidden="false" aria-label="logout"
+              (click)="onLogoutClicked()"></mat-icon>
+  </div>
+</div>

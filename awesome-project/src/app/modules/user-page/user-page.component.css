@@ -1,0 +1,61 @@
+.group-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+  align-items: center;
+  padding: 30px 30px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+.icon {
+  width: 500px;
+  height: 500px;
+}
+
+.captcha {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.captcha button {
+  width: 200px;
+}
+
+.form-container {
+  display: flex;
+  padding-top: 250px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-container h1 {
+  text-align: center;
+}
+
+.form-btn {
+  margin-right: 50px;
+}
+
+.add-btn {
+  margin-right: 400px;
+  margin-bottom: 100px;
+  width: 50px;
+  height: 50px;
+}
+
+.no-plans {
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.mat-form-field {
+  width: 600px;
+}
+
+.month-name {
+  margin-left: 250px;
+  margin-top: 60px;
+}

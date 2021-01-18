@@ -1,0 +1,40 @@
+<div>
+  <form [formGroup]="form" class="card">
+    <h1 class="awesome">AWESOME PROJECT</h1>
+    <p>Please authorise to continue using this application</p>
+
+    <mat-form-field class="mat-form">
+      <mat-label>User name</mat-label>
+      <div class="form-input">
+        <input matInput placeholder="Source text" formControlName="userName" class="userName">
+        <span class="material-icons">person</span>
+      </div>
+    </mat-form-field>
+
+    <mat-form-field class="mat-form">
+      <mat-label>Enter your password</mat-label>
+      <div class="form-input">
+        <input matInput [type]="hide ? 'password' : 'text'" class="password" placeholder="Password" formControlName="password">
+        <button mat-icon-button matSuffix (mousedown)="onShowClick()" (mouseup)="onShowClick()"
+                [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+          <mat-icon> {{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </div>
+
+    </mat-form-field>
+
+    <div *ngIf="userNotFound" class="validation">
+      <p>Sorry authorization was failed. Please check input values and try again</p>
+    </div>
+
+    <div class="form-btn">
+      <button mat-raised-button color="primary"
+              class="sign-in"
+              [disabled]="form.invalid || form.untouched"
+              (click)="onAuthClick()">
+        Sign-in
+      </button>
+    </div>
+  </form>
+</div>

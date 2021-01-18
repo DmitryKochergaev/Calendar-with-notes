@@ -1,0 +1,25 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.mat-form {
+  width: 500px;
+  margin-top: 25px;
+}
+
+.form-footer {
+  margin-top: 60px;
+}
+
+.form-btn {
+  margin-right: 30px;
+  width: 100px;
+}
+
+.mat-form-color-icon {
+  width: 100px;
+  height: 100px;
+}
